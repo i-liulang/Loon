@@ -19,5 +19,5 @@ JAVDB会员 = type=http-request,pattern=^https:\/\/(api\.yijingluowangluo\.xyz|j
 //百度网盘 = type=http-response,pattern=https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/bdcloud.js
 
 
-[MITM]
+[Mitm]
 hostname = *.camscanner.com, *.intsig.net, *.aliyundrive.com, m.douban.com, mb3admin.com, ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com, api.pxxgg.xyz, api.ujvnmkx.cn, jdforrepam.com, api.yijingluowangluo.xyz, biz.cyapi.cn, pan.baidu.com, 
