@@ -4,9 +4,9 @@
 #!date = 2023-10-09
 
 [Script]
-http-response ^https:\/\/in\.m\.jd\.com\/product\/.+?\.html script-path=https://raw.githubusercontent.com/githubdulong/Script/master/jdHelper.js, requires-body = true, tag = 京东助手
-http-response ^https:\/\/wqs\.jd\.com\/wxsq_item_search\/item\/jxapp_detail\/index\.shtml script-path=https://raw.githubusercontent.com/githubdulong/Script/master/jdHelper.js, requires-body = true, tag = 京喜助手
-http-response ^https:\/\/lite-in\.m\.jd\.com\/product\/detail\/sequ\/\d+.html script-path=https://raw.githubusercontent.com/githubdulong/Script/master/jdHelper.js, requires-body = true, tag = 特价助手
+http-response ^https:\/\/in\.m\.jd\.com\/product\/.+?\.html script-path=https://raw.githubusercontent.com/i-liulang/Surge/main/jd_buy_helper.js, requires-body = true, tag = 京东助手
+http-response ^https:\/\/wqs\.jd\.com\/wxsq_item_search\/item\/jxapp_detail\/index\.shtml script-path=https://raw.githubusercontent.com/i-liulang/Surge/main/jd_buy_helper.js, requires-body = true, tag = 京喜助手
+http-response ^https:\/\/lite-in\.m\.jd\.com\/product\/detail\/sequ\/\d+.html script-path=https://raw.githubusercontent.com/i-liulang/Surge/main/jd_buy_helper.js, requires-body = true, tag = 特价助手
 
 [Mitm]
 hostname = in.m.jd.com, wqs.jd.com, lite-in.m.jd.com
