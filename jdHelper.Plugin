@@ -1,0 +1,12 @@
+#!name=京东助手
+#!desc=京东、京喜、特价app领取隐藏劵+触发京粉转链+跳转慢慢买与什么值得买
+#!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/master/App_icon/120px/JD.png
+#!date = 2023-10-09
+
+[Script]
+http-response ^https:\/\/in\.m\.jd\.com\/product\/.+?\.html https://raw.githubusercontent.com/githubdulong/Script/master/jdHelper.js, requires-body = true, tag = 京东助手
+http-response ^https:\/\/wqs\.jd\.com\/wxsq_item_search\/item\/jxapp_detail\/index\.shtml script-path=https://raw.githubusercontent.com/githubdulong/Script/master/jdHelper.js, requires-body = true, tag = 京喜助手
+http-response ^https:\/\/lite-in\.m\.jd\.com\/product\/detail\/sequ\/\d+.html script-path=https://raw.githubusercontent.com/githubdulong/Script/master/jdHelper.js, requires-body = true, tag = 特价助手
+
+[Mitm]
+hostname = in.m.jd.com, wqs.jd.com, lite-in.m.jd.com
