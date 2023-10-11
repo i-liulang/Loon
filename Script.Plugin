@@ -16,7 +16,7 @@ http-response ^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDe
 http-request ^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js, requires-body=true, tag = 奈飞评分
 http-response ^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js, requires-body=true, tag = 奈飞评分
 # > JavDB 
-http-response ^https:\/\/(api\.yijingluowangluo\.xyz|jdforrepam\.com)\/api\/(v1\/(ads|startup|users)|v4\/movies\/\w+) script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/myBlockAds.js, tag = JavDB
+http-response ^https:\/\/(api\.yijingluowangluo\.xyz|jdforrepam\.com)\/api\/(v1\/(ads|startup|users)|v4\/movies\/\w+) script-path=https://raw.githubusercontent.com/i-liulang/Loon/main/Javdb.js, tag = JavDB
 http-request ^https:\/\/(api\.yijingluowangluo\.xyz|jdforrepam\.com)\/api\/v1\/movies\/\w+\/play\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/javdb.js, tag = JavDB会员
 # > 彩云天气 解锁
 //http-response ^https:\/\/biz\.cyapi\.cn\/(p\/v1\/vip_info|v2\/user), requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/caiyun.js, tag = 彩云天气
