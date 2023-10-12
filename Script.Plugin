@@ -1,7 +1,7 @@
 #!name = 脚本合集
 #!desc = 脚本合集
 #!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/master/App_icon/120px/JavaScriptConverter.png
-#!date = 2023-10-07
+#!date = 2023-10-12
 
 [Script]
 # > 扫描全能王 pro
@@ -25,4 +25,4 @@ http-request ^https:\/\/(api\.yijingluowangluo\.xyz|jdforrepam\.com)\/api\/v1\/m
 
 
 [Mitm]
-hostname = *.camscanner.com, *.intsig.net, *.aliyundrive.com, m.douban.com, mb3admin.com, ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com, api.yijingluowangluo.xyz, jdforrepam.com, biz.cyapi.cn, pan.baidu.com, api.pxxgg.xyz, api.ujvnmkx.cn,
+hostname = *.camscanner.com, *.intsig.net, *.aliyundrive.com, m.douban.com, mb3admin.com, ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com, api.pxxgg.xyz, api.ujvnmkx.cn, api.yijingluowangluo.xyz, jdforrepam.com, biz.cyapi.cn, pan.baidu.com,
