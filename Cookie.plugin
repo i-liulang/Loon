@@ -1,6 +1,6 @@
 #!name = 重写获取
 #!desc = 获取完关闭
-#!date = 2023-10-08
+#!date = 2023-10-16
 
 
 [Script]
@@ -12,8 +12,6 @@ http-request ^https?:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/app-skin-ser
 http-request https?:\/\/(c\.tieba\.baidu\.com|180\.97\.\d+\.\d+)\/c\/s\/login script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js,tag=贴吧_获取cookie1
 http-request ^https?:\/\/c\.tieba\.baidu\.com\/c\/s\/channelIconConfig script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js,tag=贴吧_获取cookie2
 http-request ^https?:\/\/tiebac\.baidu\.com\/c\/u\/follow\/getFoldedMessageUserInfo script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js,tag=贴吧_获取cookie3
-# > 腾讯视频 app获取
-http-request ^https?:\/\/iacc\.rec\.qq\.com script-path=https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/videoqq.js, tag=腾讯视频Cookie
 # > 什么值得买 app获取
 http-request ^https?:\/\/user-api\.smzdm\.com\/checkin$ script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js,tag=什么值得买_获取cookie
 # > IT之家 app获取
@@ -28,4 +26,4 @@ http-response https:\/\/auth.(aliyundrive|alipan).com\/v2\/account\/token script
 http-request ^https:\/\/(api\.m|me-api|ms\.jr)\.jd\.com\/(client\.action\?functionId=signBean|user_new\/info\/GetJDUserInfoUnion\?|gw\/generic\/hy\/h5\/m\/appSign\?) tag=获取京东Cookie, requires-body=true, script-path=https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js
 
 [Mitm]
-hostname = app.bilibili.com, m.bilibili.com, mobile.ximalaya.com, mobwsa.ximalaya.com, mobilehera.ximalaya.com, c.tieba.baidu.com, tiebac.baidu.com, iacc.rec.qq.com, user-api.smzdm.com, my.ruanmei.com, apph5.manmanbuy.com, passport.iqiyi.com, auth.alipan.com, ms.jr.jd.com, me-api.jd.com, api.m.jd.com
+hostname = app.bilibili.com, m.bilibili.com, mobile.ximalaya.com, mobwsa.ximalaya.com, mobilehera.ximalaya.com, c.tieba.baidu.com, tiebac.baidu.com, user-api.smzdm.com, my.ruanmei.com, apph5.manmanbuy.com, passport.iqiyi.com, auth.alipan.com, ms.jr.jd.com, me-api.jd.com, api.m.jd.com
