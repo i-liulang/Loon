@@ -7,11 +7,11 @@
 # > 扫描全能王 pro
 http-response ^https?:\/\/.*\.(intsig\.net|camscanner\.com) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/CamScanner.js, requires-body=true, tag = 扫描全能王
 # > 阿里云盘净化
-http-response ^https?:\/\/(api|member)\.aliyundrive\.com,requires-body=true,max-size=3145728,timeout=60,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/alidrive.js,script-update-interval=0, tag = 阿里云盘净化
+http-response ^https?:\/\/(api|member)\.(aliyundrive|alipan)\.com\/(.+\/(users|activity|user\/get)|((business|apps)\/.+\/users|adrive\/.+\/user)) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/alidrive.js, requires-body=true, tag = 阿里云盘净化
 # > 豆瓣电影 搜索
 http-response ^https://m.douban.com/movie/subject/.+,requires-body=true,max-size=0,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/Douban.js, tag = 豆瓣电影
 # > Emby 解锁
-http-response ^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice,requires-body=true,max-size=0,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/Emby.js, tag = EmbyPro
+http-response ^https?:\/\/mb3admin\.com\/admin\/service(\/registration\/validateDevice|\/appstore\/register|\/registration\/validate|\/registration\/getStatus|\/supporter\/retrievekey) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/embycrack.js, requires-body=true,, tag = EmbyPro
 # > 奈飞评分
 http-request ^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js, requires-body=true, tag = 奈飞评分
 http-response ^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js, requires-body=true, tag = 奈飞评分
@@ -25,4 +25,4 @@ http-request ^https:\/\/(api\.yijingluowangluo\.xyz|jdforrepam\.com)\/api\/v1\/m
 
 
 [Mitm]
-hostname = *.camscanner.com, *.intsig.net, *.aliyundrive.com, m.douban.com, mb3admin.com, ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com, api.pxxgg.xyz, api.ujvnmkx.cn, api.yijingluowangluo.xyz, jdforrepam.com, biz.cyapi.cn, pan.baidu.com,
+hostname = *.camscanner.com, *.intsig.net, *.aliyundrive.com, *.alipan.com, m.douban.com, mb3admin.com, ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com, api.pxxgg.xyz, api.ujvnmkx.cn, api.yijingluowangluo.xyz, jdforrepam.com, biz.cyapi.cn, pan.baidu.com,
