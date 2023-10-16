@@ -1,6 +1,6 @@
 #!name = 定时脚本
 #!desc = 定时任务
-#!date = 2023-10-08
+#!date = 2023-10-16
 
 [Script]
 # > IT之家
@@ -19,5 +19,5 @@ cron "40 6 * * *" script-path=https://raw.githubusercontent.com/lowking/Scripts/
 cron "30 7 * * *" script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js, tag=B站每日等级任务
 # > 爱奇艺
 cron "0 9 * * *" script-path=https://raw.githubusercontent.com/NobyDa/Script/master/iQIYI-DailyBonus/iQIYI.js, tag=爱奇艺签到
-# > 腾讯视频
-cron "0 5 * * *" script-path=https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/videoqq.js, tag=腾讯视频签到
+# > 威锋论坛
+威锋论坛 = type=cron,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/weifeng.js,cronexp=30 5 0 * * *,wake-system=1,timeout=15,script-update-interval=0
