@@ -20,4 +20,4 @@ cron "30 7 * * *" script-path=https://raw.githubusercontent.com/ClydeTime/BiliBi
 # > 爱奇艺
 cron "0 9 * * *" script-path=https://raw.githubusercontent.com/NobyDa/Script/master/iQIYI-DailyBonus/iQIYI.js, tag=爱奇艺签到
 # > 威锋论坛
-威锋论坛 = type=cron,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/weifeng.js,cronexp=30 5 0 * * *,wake-system=1,timeout=15,script-update-interval=0
+cron "0 5 * * *" script-path=https://raw.githubusercontent.com/githubdulong/Script/master/weifeng.js, tag=威锋论坛签到
