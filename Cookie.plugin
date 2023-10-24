@@ -1,6 +1,6 @@
 #!name = 重写获取
 #!desc = 获取完关闭
-#!date = 2023-10-16
+#!date = 2023-10-24
 
 
 [Script]
@@ -17,8 +17,6 @@ http-request ^https?:\/\/tiebac\.baidu\.com\/c\/u\/follow\/getFoldedMessageUserI
 http-request ^https?:\/\/user-api\.smzdm\.com\/checkin$ script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js,tag=什么值得买_获取cookie
 # > IT之家 app获取
 http-response ^https:\/\/my\.ruanmei\.com\/api\/usersign\/getsigninfo? script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/ithome/ithome.cookie.js,tag=IT之家_获取cookie
-# > 慢慢买 app获取
-http-request ^https?:\/\/apph5\.manmanbuy\.com\/taolijin\/(login.aspx|logserver.aspx) script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/manmanbuy/manmanbuy_checkin.js,requires-body=true,tag=慢慢买_获取cookie
 # > 爱奇艺 登陆 https://m.iqiyi.com/user.html
 http-request ^https:\/\/passport\.iqiyi\.com\/apis\/user\/ script-path=https://raw.githubusercontent.com/NobyDa/Script/master/iQIYI-DailyBonus/iQIYI.js,tag=爱奇艺_获取cookie
 # > 阿里云盘 app获取
@@ -27,4 +25,4 @@ http-response https:\/\/auth.(aliyundrive|alipan).com\/v2\/account\/token script
 http-request ^https:\/\/(api\.m|me-api|ms\.jr)\.jd\.com\/(client\.action\?functionId=signBean|user_new\/info\/GetJDUserInfoUnion\?|gw\/generic\/hy\/h5\/m\/appSign\?) tag=获取京东Cookie, requires-body=true, script-path=https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js
 
 [Mitm]
-hostname = app.bilibili.com, m.bilibili.com, mobile.ximalaya.com, mobwsa.ximalaya.com, mobilehera.ximalaya.com, c.tieba.baidu.com, tiebac.baidu.com, user-api.smzdm.com, my.ruanmei.com, apph5.manmanbuy.com, passport.iqiyi.com, auth.alipan.com, ms.jr.jd.com, me-api.jd.com, api.m.jd.com
+hostname = app.bilibili.com, m.bilibili.com, mobile.ximalaya.com, mobwsa.ximalaya.com, mobilehera.ximalaya.com, c.tieba.baidu.com, tiebac.baidu.com, user-api.smzdm.com, my.ruanmei.com, passport.iqiyi.com, auth.alipan.com, ms.jr.jd.com, me-api.jd.com, api.m.jd.com
