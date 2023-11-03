@@ -1,7 +1,7 @@
 #!name = 脚本合集
 #!desc = 脚本合集
 #!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/master/App_icon/120px/JavaScriptConverter.png
-#!date = 2023-10-24
+#!date = 2023-11-03
 
 [Script]
 # > 扫描全能王 pro
@@ -16,7 +16,7 @@ http-response ^https?:\/\/mb3admin\.com\/admin\/service(\/registration\/validate
 http-request ^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js, requires-body=true, tag = 奈飞评分
 http-response ^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js, requires-body=true, tag = 奈飞评分
 # > JavDB 
-http-response ^https?:\/\/api\.((pxxgg|yijingluowangluo)\.xyz|ujvnmkx\.cn)\/api script-path=https://raw.githubusercontent.com/chxm1023/Advertising/main/JavDB.js, requires-body=true, timeout=60 ,tag=JavDB
+http-response ^https?:\/\/api\.((pxxgg|hechuangxinxi)\.xyz|ujvnmkx\.cn)\/api script-path=https://raw.githubusercontent.com/chxm1023/Advertising/main/JavDB.js, requires-body=true, timeout=60 ,tag=JavDB
 http-request ^https:\/\/(api\.hechuangxinxi\.xyz|jdforrepam\.com)\/api\/v1\/movies\/\w+\/play\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/javdb.js, tag = JavDB会员
 # > 悟饭掌悦
 http-response http:\/\/iosv2\.cjapi\.5fun\.com script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/wfzy.js, requires-body=true, tag=悟饭掌悦
