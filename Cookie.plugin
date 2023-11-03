@@ -1,6 +1,6 @@
 #!name = 重写获取
 #!desc = 获取完关闭
-#!date = 2023-10-24
+#!date = 2023-11-03
 
 
 [Script]
@@ -8,7 +8,7 @@
 http-request ^https?:\/\/app\.bilibili\.com\/x\/resource\/domain\? script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js, tag=B站Cookie(APP)
 http-request ^https?:\/\/m.bilibili.com/$ script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js, tag=B站Cookie(网页)
 # > 喜马拉雅 app获取
-http-request ^https?:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/app-skin-service\/skin\/ script-path=https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/xmlySign.js, tag=喜马拉雅Cookie
+http-request ^https?:\/\/xmc\.ximalaya\.com\/xmlymain-login-web\/login\/ script-path=https://raw.githubusercontent.com/ClydeTime/Surge/main/Script/Task/xmly.js, tag=喜马拉雅Cookie
 # > 百度贴吧 app获取
 http-request https?:\/\/(c\.tieba\.baidu\.com|180\.97\.\d+\.\d+)\/c\/s\/login script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js,tag=贴吧_获取cookie1
 http-request ^https?:\/\/c\.tieba\.baidu\.com\/c\/s\/channelIconConfig script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js,tag=贴吧_获取cookie2
