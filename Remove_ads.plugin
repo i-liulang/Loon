@@ -60,10 +60,6 @@ DOMAIN-SUFFIX, doubleclick.net, REJECT
 # > 京东
 # > 弃用地址
 DOMAIN, waapdg.jd.com, REJECT
-# > Boxjs 代理
-DOMAIN-KEYWORD,jsdelivr.net,𝗣𝗥𝗢𝗫𝗬
-# > Sub-Store 代理
-DOMAIN-KEYWORD,vercel.app,𝗣𝗥𝗢𝗫𝗬
 # > 心动源代理
 DOMAIN-SUFFIX,applehub.cn,𝗣𝗥𝗢𝗫𝗬
 # > Siri与搜索 代理
