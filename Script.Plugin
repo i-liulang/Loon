@@ -7,6 +7,8 @@
 # > 视频服务器分流
 DOMAIN-KEYWORD,yuheng, DIRECT
 IP-CIDR, 172.233.81.206/24, DIRECT, no-resolve
+# > 微信消息
+DOMAIN-SUFFIX,weixin.qq.com,𝗗𝗜𝗥𝗘𝗖𝗧,extended-matching
 
 [Script]
 # > 扫描全能王 pro
