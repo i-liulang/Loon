@@ -1,7 +1,10 @@
 #!name = 重写获取
 #!desc = 获取完关闭
-#!date = 2023-11-03
+#!date = 2023-12-06
 
+[Rule]
+DOMAIN,gslbali.ximalaya.com,REJECT
+DOMAIN,gslbtx.ximalaya.com,REJECT
 
 [Script]
 # > 哔哩哔哩 app获取
@@ -23,6 +26,10 @@ http-request ^https:\/\/passport\.iqiyi\.com\/apis\/user\/ script-path=https://r
 http-response https:\/\/auth.(aliyundrive|alipan).com\/v2\/account\/token script-path=https://raw.githubusercontent.com/lowking/Scripts/master/ali/aliYunPanCheckIn.js, requires-body=true, tag=阿里云盘签到cookie
 # > 京东CK 签到日历获取
 http-request ^https:\/\/(api\.m|me-api|ms\.jr)\.jd\.com\/(client\.action\?functionId=signBean|user_new\/info\/GetJDUserInfoUnion\?|gw\/generic\/hy\/h5\/m\/appSign\?) tag=获取京东Cookie, requires-body=true, script-path=https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js
+# > 托迈酷客 复游度假生活小程序获取
+http-request ^https:\/\/apis\.folidaymall\.com\/online\/capi\/uc\/getCount script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/ThomasCook.js,tag=托迈酷客_获取cookie
+# > 云闪付 app获取
+http-response ^https:\/\/youhui.95516.com\/newsign\/api\/sharing_power\/showUserTask script-path=https://raw.githubusercontent.com/i-liulang/Surge/main/ysf.js, requires-body=true, tag=云闪付签到cookie
 
 [Mitm]
-hostname = app.bilibili.com, m.bilibili.com, mobile.ximalaya.com, mobwsa.ximalaya.com, mobilehera.ximalaya.com, c.tieba.baidu.com, tiebac.baidu.com, user-api.smzdm.com, my.ruanmei.com, passport.iqiyi.com, auth.alipan.com, ms.jr.jd.com, me-api.jd.com, api.m.jd.com
+hostname = app.bilibili.com, m.bilibili.com, mobile.ximalaya.com, mobwsa.ximalaya.com, mobilehera.ximalaya.com, c.tieba.baidu.com, tiebac.baidu.com, user-api.smzdm.com, my.ruanmei.com, passport.iqiyi.com, auth.alipan.com, ms.jr.jd.com, me-api.jd.com, api.m.jd.com, apis.folidaymall.com,  youhui.95516.com
