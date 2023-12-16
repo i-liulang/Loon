@@ -1,12 +1,12 @@
 #!name = 脚本合集
 #!desc = 脚本合集
 #!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/master/App_icon/120px/JavaScriptConverter.png
-#!date = 2023-12-06
+#!date = 2023-12-16
 
 [Rule]
 # > 视频服务器分流
 DOMAIN-KEYWORD,yuheng, DIRECT
-IP-CIDR, 172.233.81.206/24, DIRECT, no-resolve
+DOMAIN-KEYWORD, yqc-premium, DIRECT
 # > 微信消息
 DOMAIN-SUFFIX,weixin.qq.com,DIRECT,extended-matching
 
