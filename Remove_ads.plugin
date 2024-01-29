@@ -1,7 +1,7 @@
 #!name = 广告过滤器
 #!desc = 自用的广告过滤器
 #!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/main/Other_icon/120px/RemoveAds.png
-#!date = 2023-12-06
+#!date = 2024-01-29
 
 [Rule]
 # > 广告联盟
@@ -17,16 +17,55 @@ DOMAIN-KEYWORD, pangolin-sdk-toutiao, REJECT
 DOMAIN-KEYWORD, pangolin.snssdk.com, REJECT
 DOMAIN-KEYWORD, pglstatp-toutiao, REJECT
 DOMAIN-KEYWORD, video-cn.snssdk.com, REJECT
-# > 字节跳动
+
+# 字节跳动 - 广告服务商
 DOMAIN, ad.zijieapi.com, REJECT
-DOMAIN-KEYWORD, asiad.byteactivity, REJECT
+DOMAIN, i.snssdk.com, REJECT
+DOMAIN, is.snssdk.com, REJECT
 DOMAIN-KEYWORD, -ad-sign.byteimg.com, REJECT
-# > 阿里巴巴
+DOMAIN-KEYWORD, -tos.pstatp.com, REJECT-DROP
+DOMAIN-KEYWORD, asiad.byteactivity, REJECT
+DOMAIN-KEYWORD, pangolin.snssdk.com, REJECT
+DOMAIN-KEYWORD, pangolin-sdk-toutiao, REJECT
+DOMAIN-KEYWORD, pglstatp-toutiao, REJECT
+DOMAIN-KEYWORD, video-cn.snssdk.com, REJECT
+
+# 快手联盟 - 广告服务商
+DOMAIN, open.e.kuaishou.com, REJECT
+
+# 秒针系统 - 广告服务商
+DOMAIN-SUFFIX, miaozhen.com, REJECT
+
+# 达佳互联 - 广告服务商
+DOMAIN-SUFFIX, adukwai.com, REJECT
+
+# 艾狄墨搏 - 广告服务商
+DOMAIN, monitor.ssp.admobile.top, REJECT
+DOMAIN, sdk.ssp.admobile.top, REJECT
+DOMAIN-SUFFIX, admobile.top, REJECT
+
+# 极光 - 广告服务商
+DOMAIN-SUFFIX, jiguang.cn, REJECT
+
+# 百度联盟 - 广告服务商
+DOMAIN-SUFFIX, union.baidu.cn, REJECT
+DOMAIN-SUFFIX, union.baidu.com, REJECT
+
+# 腾讯优量汇 - 广告服务商
+DOMAIN, mazu.m.qq.com, REJECT
+DOMAIN, sdk.e.qq.com, REJECT
+# DOMAIN-SUFFIX, gdt.qq.com, REJECT
+
+# 天目 - 广告服务商
+DOMAIN, sdk.tianmu.mobi, REJECT
+
+# 阿里巴巴
 DOMAIN, ossgw.alicdn.com, REJECT
 DOMAIN, ems.youku.com, REJECT
 DOMAIN, hudong.alicdn.com, REJECT
 DOMAIN-SUFFIX, ut.taobao.com, REJECT
-# > 腾讯
+
+# 腾讯
 DOMAIN, adsmind.gdtimg.com, REJECT
 DOMAIN, info4.video.qq.com, REJECT
 DOMAIN, info6.video.qq.com, REJECT
@@ -36,20 +75,25 @@ DOMAIN, pgdt.gtimg.cn, REJECT
 DOMAIN, tpns.qq.com, REJECT
 DOMAIN, vv.video.qq.com, REJECT
 DOMAIN, vv6.video.qq.com, REJECT
+DOMAIN, up-hl.3g.qq.com, REJECT-NO-DROP
 DOMAIN-SUFFIX, gdt.qq.com, REJECT
 DOMAIN-SUFFIX, l.qq.com, REJECT
 DOMAIN-KEYWORD, trace.qq.com, REJECT
 DOMAIN-KEYWORD, trace.video.qq.com, REJECT
 IP-CIDR, 47.110.187.87/32, REJECT
+
+
 # > 百度
 DOMAIN, mobads.baidu.com, REJECT
 DOMAIN-SUFFIX, pos.baidu.com, REJECT
+
 # > 美团
 DOMAIN, al-log.d.meituan.net, REJECT
 DOMAIN, babel-statistics-android.d.meituan.net, REJECT
 DOMAIN, maplocatesdksnapshot.d.meituan.net, REJECT
 DOMAIN, metrics-picture.d.meituan.net, REJECT
 DOMAIN, route-stats.d.meituan.net, REJECT
+
 # > Outlook
 DOMAIN, acdn.adnxs.com, REJECT
 DOMAIN, mediation.adnxs.com, REJECT
@@ -57,21 +101,26 @@ DOMAIN, sin3-ib.adnxs.com, REJECT
 # > 通用广告
 DOMAIN-SUFFIX, doubleclick-cn.net, REJECT
 DOMAIN-SUFFIX, doubleclick.net, REJECT
+
 # > 京东
 # > 弃用地址
 DOMAIN, waapdg.jd.com, REJECT
+
 # > 心动源代理
 DOMAIN-SUFFIX,applehub.cn,𝗣𝗥𝗢𝗫𝗬
+
 # > Siri与搜索 代理
 PROCESS-NAME,LookupViewService,𝗣𝗥𝗢𝗫𝗬
 PROCESS-NAME,/System/Library/PrivateFrameworks/Lookup.framework/Versions/A/XPCServices/LookupViewService.xpc/Contents/MacOS/LookupViewService,𝗣𝗥𝗢𝗫𝗬
 DOMAIN,lookup-api.apple.com,𝗣𝗥𝗢𝗫𝗬
 DOMAIN,lookup-api.apple.com.edgekey.net,𝗣𝗥𝗢𝗫𝗬
 DOMAIN,e16991.b.akamaiedge.net,𝗣𝗥𝗢𝗫𝗬
+
 # > 安全浏览限制解除
 DOMAIN, lookup.api.bsb.baidu.com, REJECT
 DOMAIN-SUFFIX, u3.ucweb.com, REJECT
 DOMAIN-KEYWORD, safebrowsing., REJECT
+
 # > Safari 防跳转
 DOMAIN,app-site-association.cdn-apple.com,REJECT
 DOMAIN,zh.mk,𝗣𝗥𝗢𝗫𝗬
@@ -111,12 +160,10 @@ https://api.m.jd.com/client.action\?functionId=lite_advertising reject
 ^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start reject-img
 ^https?:\/\/(bdsp-x|dsp-x)\.jd\.com\/adx\/ reject-200
 ^https?:\/\/ms\.jr\.jd\.com\/gw\/generic\/aladdin\/(new)?na\/m\/getLoadingPicture reject
-# > 飞猪 + 阿里巴巴
-^http?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch %E9%A3%9E%E7%8C%AA%E6%97%85%E8%A1%8C url-and-header reject-dict
+# > 飞猪 
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(allresource|predict) reject-dict
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources\/1\.0\?type=originaljson reject-img
-^https?:\/\/gw\.alicdn\.com\/mt\/ reject
-^https?:\/\/gw\.alicdn\.com\/imgextra\/\w{2}\/[\w!]+-\d-tps-\d{3}-\d{4}\.(jpg|png)$ reject
+# > 淘票票 开屏广告
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.(queryadvertise|queryloadingbanner)\/ reject
 # > 订票助手
 ^https?:\/\/m\.ctrip\.com\/restapi\/[\w\/]+tripAds REJECT
 ^https?:\/\/m\.ctrip\.com\/restapi\/soa2\/\d+\/json\/getAdsList REJECT
@@ -129,8 +176,6 @@ https://api.m.jd.com/client.action\?functionId=lite_advertising reject
 ^https?:\/\/res\.kfc\.com\.cn\/CRM\/kfcad\/apphome5\/apphome reject-200
 ^https?:\/\/res\.kfc\.com\.cn\/CRM\/kfcad\/apphome6\/\w+\.json\? reject-dict
 ^https?:\/\/res\.kfc\.com.\cn\/advertisement\/ reject
-# > 淘票票 开屏广告
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.(queryadvertise|queryloadingbanner)\/ reject
 # > 威锋
 ^https:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList) reject
 # > 云闪付
@@ -143,14 +188,15 @@ https://api.m.jd.com/client.action\?functionId=lite_advertising reject
 ^https:\/\/mbmodule-openapi\.paas\.cmbchina\.com\/graphic\/v2\/module\/graphic reject-dict
 # > 掌上生活（需卸载重装）
 # 开屏广告
-^https:\/\/az\dmbasecc\.bas\.cmbchina\.com\/Edge\/api\/mlife\.clientface\.clientservice\.api\.advertiseService\/preCacheAdvertiseSec reject-dict
+^https:\/\/mbasecc\.bas\.cmbchina\.com\/Edge\/api\/mlife\.clientface\.clientservice\.api\.advertiseService\/preCacheAdvertiseSec url reject-dict
 # 设置栏目内广告
 ^https?:\/\/intellicc\.bas\.cmbchina\.com\/Edge\/api\/mlife\.intelli\.render\.api\.render\/getDynamicDataSec reject
-
+# 首页随机弹窗
+^https?:\/\/intellicc\.bcs\.cmbchina\.com\/Edge\/api\/mlife\.intelli\.adrender\.api\.AdWork\/getAdsBySlotId url reject-dict
 
 [Script]
 # > 快手联盟、优量汇、穿山甲
 http-response ^https:\/\/(api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/get_ads|open\.e\.kuaishou\.com\/rest\/e\/v3\/open\/univ$|mi\.gdt\.qq\.com\/gdt_mview\.fcg\?) script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Remove_ads_by_keli/adsense.js, requires-body = true, tag = 移除广告联盟广告
 
 [Mitm]
-hostname = api.pinduoduo.com,  api.yangkeduo.com, home.umetrip.com, umerp.umetrip.com, *.elemecdn.com, capis(-d)?.didapinche.com, conf.diditaxi.com.cn, adx-cn.anythinktech.com, *.360buyimg.com, ms.jr.jd.com, m.ctrip.com, res.kfc.com.cn, api.wfdata.club, wallet.95516.com, tysdk.95516.com, ads.95516.com, webappcfg.paas.cmbchina.com, mbmodule-openapi.paas.cmbchina.com, azdmbasecc.bas.cmbchina.com, intellicc.bas.cmbchina.com, api-access.pangolin-sdk-toutiao.com, 
+hostname = api.pinduoduo.com,  api.yangkeduo.com, home.umetrip.com, umerp.umetrip.com, *.elemecdn.com, capis(-d)?.didapinche.com, conf.diditaxi.com.cn, adx-cn.anythinktech.com, *.360buyimg.com, ms.jr.jd.com, acs.m.taobao.com, m.ctrip.com, res.kfc.com.cn, api.wfdata.club, wallet.95516.com, tysdk.95516.com, ads.95516.com, webappcfg.paas.cmbchina.com, mbmodule-openapi.paas.cmbchina.com, mbasecc.bas.cmbchina.com, intellicc.bas.cmbchina.com, api-access.pangolin-sdk-toutiao.com, 
