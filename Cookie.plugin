@@ -12,8 +12,6 @@ DOMAIN,gslbtx.ximalaya.com,REJECT
 //http-request ^https?:\/\/m.bilibili.com/$ script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js, tag=B站Cookie(网页)
 # > 喜马拉雅 app获取
 http-request ^https?:\/\/xmc\.ximalaya\.com\/xmlymain-login-web\/login\/ script-path=https://raw.githubusercontent.com/ClydeTime/Surge/main/Script/Task/xmly.js, tag=喜马拉雅Cookie
-# > 百度贴吧 app获取
-http-request https?:\/\/(c\.tieba\.baidu\.com|180\.97\.\d+\.\d+)\/c\/s\/login script-path=https://raw.githubusercontent.com/NobyDa/Script/master/BDTieBa-DailyBonus/TieBa.js,tag=贴吧_获取cookie
 # > 什么值得买 app获取
 http-request ^https:\/\/user-api\.smzdm\.com\/users\/info script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cookie/get_cookie.js,tag=什么值得买_获取cookie
 # > IT之家 app获取
@@ -30,4 +28,4 @@ http-request ^https:\/\/apis\.folidaymall\.com\/online\/capi\/uc\/getCount scrip
 http-response ^https:\/\/youhui.95516.com\/newsign\/api\/sharing_power\/showUserTask script-path=https://raw.githubusercontent.com/i-liulang/Surge/main/ysf.js, requires-body=true, tag=云闪付签到cookie
 
 [Mitm]
-hostname = app.bilibili.com, m.bilibili.com, mobile.ximalaya.com, mobwsa.ximalaya.com, mobilehera.ximalaya.com, c.tieba.baidu.com, user-api.smzdm.com, my.ruanmei.com, passport.iqiyi.com, auth.alipan.com, aliyundrive.alipan.com, ms.jr.jd.com, me-api.jd.com, api.m.jd.com, apis.folidaymall.com,  youhui.95516.com
+hostname = app.bilibili.com, m.bilibili.com, mobile.ximalaya.com, mobwsa.ximalaya.com, mobilehera.ximalaya.com, user-api.smzdm.com, my.ruanmei.com, passport.iqiyi.com, auth.alipan.com, aliyundrive.alipan.com, ms.jr.jd.com, me-api.jd.com, api.m.jd.com, apis.folidaymall.com,  youhui.95516.com
