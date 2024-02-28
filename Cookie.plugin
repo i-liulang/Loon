@@ -1,6 +1,6 @@
 #!name = 重写获取
 #!desc = 获取完关闭
-#!date = 2024-02-03
+#!date = 2024-02-28
 
 [Rule]
 DOMAIN,gslbali.ximalaya.com,REJECT
@@ -17,7 +17,7 @@ http-request ^https?:\/\/user-api\.smzdm\.com\/checkin$ script-path=https://raw.
 # > IT之家 app获取
 http-response ^https:\/\/my\.ruanmei\.com\/api\/usersign\/getsigninfo? script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/ithome/ithome.cookie.js,tag=IT之家_获取cookie
 # > 爱奇艺 登陆 https://m.iqiyi.com/user.html
-http-request ^https:\/\/passport\.iqiyi\.com\/apis\/user\/ script-path=https://raw.githubusercontent.com/NobyDa/Script/master/iQIYI-DailyBonus/iQIYI.js,tag=爱奇艺_获取cookie
+http-request ^https:\/\/passport\.iqiyi\.com\/apis\/user\/ script-path=https://raw.githubusercontent.com/NobyDa/Script/master/iQIYI-DailyBonus/iQIYI.js, requires-body=true,tag=爱奇艺_获取cookie
 # > 阿里云盘 app获取
 http-request ^https:\/\/(auth|aliyundrive)\.alipan\.com\/v2\/account\/token script-path=https://gist.githubusercontent.com/Sliverkiss/33800a98dcd029ba09f8b6fc6f0f5162/raw/aliyun.js, requires-body=true, tag=阿里云盘签到cookie
 # > 京东CK 签到日历获取
