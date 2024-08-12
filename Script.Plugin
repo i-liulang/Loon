@@ -1,7 +1,7 @@
 #!name = 脚本合集
 #!desc = 脚本合集
 #!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/master/App_icon/120px/JavaScriptConverter.png
-#!date = 2024-07-30
+#!date = 2024-08-12
 
 [Rule]
 # > 微信消息
@@ -19,6 +19,11 @@ http-response ^https?:\/\/mb3admin\.com\/admin\/service(\/registration\/validate
 # > 奈飞评分
 http-request ^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js, requires-body=true, tag = 奈飞评分
 http-response ^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js, requires-body=true, tag = 奈飞评分
+# > 彩云天气 解锁
+http-response ^https:\/\/wrapper\.cyapi\.cn\/v1\/activity\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/caiyun.js, requires-body=true, tag=彩云天气-去除活动
+http-response ^https:\/\/api\.caiyunapp\.com\/v1\/activity\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/caiyun.js, requires-body=true, tag=彩云天气-去除助手
+http-response ^https:\/\/biz\.cyapi\.cn\/(p\/v1\/vip_info|v2\/user) script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/caiyun.js, requires-body=true, tag=彩云天气-SVIP会员
+http-request ^https:\/\/wrapper\.cyapi\.cn\/v1\/(nafp\/origin_images|satellite)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/caiyun.js, requires-body=false, tag=彩云天气-SVIP地图
 # > JavDB 
 ^https:\/\/(api\.hechuangxinxi\.xyz|jdforrepam\.com)\/api\/(v1\/(ads|startup|users)|v4\/movies\/\w+) script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/myBlockAds.js, requires-body=true, timeout=60 ,tag=JavDB
 # > 悟饭掌悦
@@ -30,4 +35,4 @@ http-response https://nicegram.cloud/api/v6/user/info script-path=https://raw.gi
 
 
 [Mitm]
-hostname = *.camscanner.com, *.intsig.net, *.aliyundrive.com, *.alipan.com, m.douban.com, mb3admin.com, ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com, api.hechuangxinxi.xyz, jdforrepam.com, iosv2.cjapi.5fun.com, nicegram.cloud, pan.baidu.com,
+hostname = *.camscanner.com, *.intsig.net, *.aliyundrive.com, *.alipan.com, m.douban.com, mb3admin.com, ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com, api.caiyunapp.com, *.cyapi.cn, api.hechuangxinxi.xyz, jdforrepam.com, iosv2.cjapi.5fun.com, nicegram.cloud, pan.baidu.com,
