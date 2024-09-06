@@ -1,7 +1,7 @@
 #!name = 广告过滤器
 #!desc = 自用的广告过滤器
 #!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/main/Other_icon/120px/RemoveAds.png
-#!date = 2024-07-30
+#!date = 2024-09-06
 [Rule]
 
 # > 心动源代理
@@ -63,8 +63,8 @@ https://api.m.jd.com/client.action\?functionId=lite_advertising reject
 # > 淘票票 开屏广告
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.(queryadvertise|queryloadingbanner)\/ reject
 # > 订票助手
-^https?:\/\/m\.ctrip\.com\/restapi\/[\w\/]+tripAds REJECT
-^https?:\/\/m\.ctrip\.com\/restapi\/soa2\/\d+\/json\/getAdsList REJECT
+^https:\/\/m\.ctrip\.com\/restapi\/soa2\/12673\/queryWeChatHotEvent - reject-dict
+^https:\/\/m\.ctrip\.com\/restapi\/soa2\/13916\/tripAds - reject-dict
 # > 交管12123
 ^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$ reject
 ^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery reject
