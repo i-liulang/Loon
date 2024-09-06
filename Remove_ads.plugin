@@ -65,6 +65,10 @@ https://api.m.jd.com/client.action\?functionId=lite_advertising reject
 # > 订票助手
 ^https:\/\/m\.ctrip\.com\/restapi\/soa2\/12673\/queryWeChatHotEvent - reject-dict
 ^https:\/\/m\.ctrip\.com\/restapi\/soa2\/13916\/tripAds - reject-dict
+^https?:\/\/m\.ctrip\.com\/html5\/webresource\/js\/iscroll\.js$ - reject
+^https?:\/\/m\.ctrip\.com\/restapi\/[\w\/]+tripAds - reject
+^https?:\/\/m\.ctrip\.com\/restapi\/soa2\/\d+\/json\/getAdsList - reject
+^https?:\/\/ma-adx\.ctrip\.com\/_ma\.gif - reject
 # > 交管12123
 ^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$ reject
 ^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery reject
@@ -97,4 +101,4 @@ https://api.m.jd.com/client.action\?functionId=lite_advertising reject
 http-response ^https:\/\/(api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/get_ads|open\.e\.kuaishou\.com\/rest\/e\/v3\/open\/univ$|mi\.gdt\.qq\.com\/gdt_mview\.fcg\?) script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Remove_ads_by_keli/adsense.js, requires-body = true, tag = 移除广告联盟广告
 
 [Mitm]
-hostname = api.pinduoduo.com,  api.yangkeduo.com, home.umetrip.com, umerp.umetrip.com, *.elemecdn.com, capis(-d)?.didapinche.com, conf.diditaxi.com.cn, adx-cn.anythinktech.com, *.360buyimg.com, ms.jr.jd.com, acs.m.taobao.com, m.ctrip.com, res.kfc.com.cn, api.wfdata.club, wallet.95516.com, tysdk.95516.com, ads.95516.com, webappcfg.paas.cmbchina.com, mbmodule-openapi.paas.cmbchina.com, mbasecc.bas.cmbchina.com, intellicc.bas.cmbchina.com, api-access.pangolin-sdk-toutiao.com, 
+hostname = api.pinduoduo.com,  api.yangkeduo.com, home.umetrip.com, umerp.umetrip.com, *.elemecdn.com, capis(-d)?.didapinche.com, conf.diditaxi.com.cn, adx-cn.anythinktech.com, *.360buyimg.com, ms.jr.jd.com, acs.m.taobao.com, *.ctrip.com, res.kfc.com.cn, api.wfdata.club, wallet.95516.com, tysdk.95516.com, ads.95516.com, webappcfg.paas.cmbchina.com, mbmodule-openapi.paas.cmbchina.com, mbasecc.bas.cmbchina.com, intellicc.bas.cmbchina.com, api-access.pangolin-sdk-toutiao.com, 
