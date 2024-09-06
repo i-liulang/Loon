@@ -10,8 +10,6 @@ DOMAIN-SUFFIX,weixin.qq.com,DIRECT,extended-matching
 [Script]
 # > 扫描全能王 pro
 http-response ^https:\/\/.*\.(intsig\.net|camscanner\.com) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/CamScanner.js, requires-body=true, tag = 扫描全能王
-# > 阿里云盘净化
-http-response ^https?:\/\/(api|member)\.(aliyundrive|alipan)\.com\/(.+\/(users|activity|user\/get)|((business|apps)\/.+\/users|adrive\/.+\/user)) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/alidrive.js, requires-body=true, tag = 阿里云盘净化
 # > 豆瓣电影 搜索
 http-response ^https://m.douban.com/movie/subject/.+,requires-body=true,max-size=0,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/Douban.js, tag = 豆瓣电影
 # > Emby 解锁
@@ -35,4 +33,4 @@ http-response ^https?:\/\/(nicegram\.cloud\/api\/v\d\/user\/info|restore-access\
 
 
 [Mitm]
-hostname = *.camscanner.com, *.intsig.net, *.aliyundrive.com, *.alipan.com, m.douban.com, mb3admin.com, ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com, api.caiyunapp.com, *.cyapi.cn, api.hechuangxinxi.xyz, jdforrepam.com, iosv2.cjapi.5fun.com, nicegram.cloud, pan.baidu.com,
+hostname = *.camscanner.com, *.intsig.net, m.douban.com, mb3admin.com, ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com, api.caiyunapp.com, *.cyapi.cn, api.hechuangxinxi.xyz, jdforrepam.com, iosv2.cjapi.5fun.com, nicegram.cloud, pan.baidu.com,
