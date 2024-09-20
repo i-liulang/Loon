@@ -1,29 +1,65 @@
 #!name = 定时脚本
 #!desc = 定时任务
-#!date = 2024-08-12
+#!data = 2024-09-20
+#!icon = https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/gril.png
+#!system = iOS,iPadOS
+#!loon_version = 3.2.3(753)
+
+
+[Argument]
+arg1 = input,"17 10 * * *",tag=奶茶多合一任务时间
+arg2 = switch,true,tag=奶茶多合一任务开关
+arg3 = input,"10 0 * * *",tag=IT之家任务时间
+arg4 = switch,true,tag=IT之家任务开关
+arg5 = input,"8 0 * * *",tag=喜马拉雅任务时间
+arg6 = switch,true,tag=喜马拉雅任务开关
+arg7 = input,"2 0 * * *",tag=什么值得买任务时间
+arg8 = switch,true,tag=什么值得买任务开关
+arg9 = input,"6 0,3,6 * * *",tag=阿里云盘任务时间
+arg10 = switch,true,tag=阿里云盘任务开关
+arg11 = input,"5 0 * * *",tag=哔哩哔哩任务时间
+arg12 = switch,true,tag=哔哩哔哩开关
+arg13 = input,"3 0 * * *",tag=爱奇艺任务时间
+arg14 = switch,true,tag=爱奇艺任务开关
+arg15 = input,"0 8,18 * * *",tag=夸克网盘任务时间
+arg16 = switch,true,tag=夸克网盘任务开关
+arg17 = input,"1 0 * * *",tag=威锋论坛任务时间
+arg18 = switch,true,tag=威锋论坛任务开关
+arg19 = input,"15 0 * * *",tag=托迈酷客任务时间
+arg20 = switch,true,tag=托迈酷客任务开关
+arg21 = input,"20 0 * * *",tag=云闪付任务时间
+arg22 = switch,true,tag=云闪付员任务开关
+arg23 = input,"0 9 * * *",tag=摸鱼日历任务时间
+arg24 = switch,true,tag=摸鱼日历任务开关
+arg25 = input,"0 10 * * *",tag=每天60秒读懂世界任务时间
+arg26 = switch,true,tag=每天60秒读懂世界任务开关
+
 
 [Script]
-
+# > 奶茶多合一
+cron {arg1} script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, enable= {arg2}, tag=奶茶多合一
 # > IT之家
-cron "10 0 * * *" script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/ithome/ithome.js, tag=IT之家签到
+cron {arg3} script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/ithome/ithome.js, enable= {arg4}, tag=IT之家签到
 # > 喜马拉雅
-cron "8 0 * * *" script-path=https://raw.githubusercontent.com/ClydeTime/Surge/main/Script/Task/xmly.js, tag=喜马拉雅签到
+cron {arg5} script-path=https://raw.githubusercontent.com/ClydeTime/Surge/main/Script/Task/xmly.js, enable= {arg6}, tag=喜马拉雅签到
 # > 什么值得买
-cron "3 0 * * *" script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js, tag=什么值得买签到
+cron {arg7} script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js, enable= {arg8}, tag=什么值得买签到
 # > 阿里云盘
-cron "6 0,3,6 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/33800a98dcd029ba09f8b6fc6f0f5162/raw/aliyun.js, tag=阿里云盘签到
+cron {arg9} script-path=https://gist.githubusercontent.com/Sliverkiss/33800a98dcd029ba09f8b6fc6f0f5162/raw/aliyun.js, enable= {arg10}, tag=阿里云盘签到
 # > 哔哩哔哩
-cron "5 0 * * *" script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js, tag=B站每日等级任务
-http-request ^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\? script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js, tag=B站Cookie(APP)
+cron {arg11} script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js, tag=B站每日等级任务
+http-request ^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\? script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js, enable= {arg12}, tag=B站Cookie(APP)
 # > 爱奇艺
-cron "3 0 * * *" script-path=https://raw.githubusercontent.com/NobyDa/Script/master/iQIYI-DailyBonus/iQIYI.js, tag=爱奇艺签到
+cron {arg13} script-path=https://raw.githubusercontent.com/NobyDa/Script/master/iQIYI-DailyBonus/iQIYI.js, enable= {arg14}, tag=爱奇艺签到
+# > 夸克网盘
+cron {arg15} script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, timeout=300, enable= {arg16}, tag=夸克网盘
 # > 威锋论坛
-cron "1 0 * * *" script-path=https://raw.githubusercontent.com/githubdulong/Script/master/weifeng.js, tag=威锋论坛签到
+cron {arg17} script-path=https://raw.githubusercontent.com/githubdulong/Script/master/weifeng.js, enable= {arg18}, tag=威锋论坛签到
 # > 托迈酷客
-cron "15 0 * * *" script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/ThomasCook.js, tag=托迈酷客签到
+cron {arg19} script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/ThomasCook.js, enable= {arg20}, tag=托迈酷客签到
 # > 云闪付
-cron "20 0 * * *" script-path=https://raw.githubusercontent.com/i-liulang/Surge/main/ysf.js, tag=云闪付签到
+cron {arg21} script-path=https://raw.githubusercontent.com/i-liulang/Surge/main/ysf.js, enable= {arg22}, tag=云闪付签到
 # > 摸鱼日历
-cron "0 9 * * *" script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/moyu.js, timeout=20, tag=摸鱼来啦, img-url=https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/67/04/ff/6704ff4c-b49b-de91-70ac-201c62d5296f/AppIcon-0-0-1x_U007emarketing-0-0-0-5-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/144x144bb.png
+cron {arg23} script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/moyu.js, timeout=20, enable= {arg24}, tag=摸鱼来啦, img-url=https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/67/04/ff/6704ff4c-b49b-de91-70ac-201c62d5296f/AppIcon-0-0-1x_U007emarketing-0-0-0-5-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/144x144bb.png
 # > 每天60秒读懂世界
-cron "0 10 * * *" script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/60s.js, tag=每天60秒读懂世界
+cron {arg25} script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/60s.js, enable= {arg26}, tag=每天60秒读懂世界
