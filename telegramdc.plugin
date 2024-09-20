@@ -1,0 +1,13 @@
+#!name = Telegram DC
+#!desc = 电报数据中心分流。
+#!author = RuCu6[https://github.com/RuCu6]
+#!date = 2024-09-20
+
+[Rule]
+IP-ASN, 62014, 𝗦𝗶𝗻𝗴𝗮𝗽𝗼𝗿𝗲
+IP-ASN, 62041, 欧盟节点
+IP-ASN, 44907, 欧盟节点
+IP-ASN, 59930, 𝗨𝗻𝗶𝘁𝗲𝗱 𝗦𝘁𝗮𝘁𝗲𝘀
+IP-ASN, 211157, 𝗨𝗻𝗶𝘁𝗲𝗱 𝗦𝘁𝗮𝘁𝗲𝘀
+IP-CIDR, 5.28.192.0/18, 𝗛𝗼𝗻𝗴 𝗞𝗼𝗻𝗴, no-resolve
+IP-CIDR, 109.239.140.0/24, 𝗛𝗼𝗻𝗴 𝗞𝗼𝗻𝗴, no-resolve
