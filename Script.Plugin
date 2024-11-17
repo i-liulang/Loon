@@ -1,9 +1,11 @@
 #!name = 脚本合集
 #!desc = 脚本合集
 #!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/master/App_icon/120px/JavaScriptConverter.png
-#!date = 2024-10-23
+#!date = 2024-11-17
 
 [Rule]
+# > TG不转圈
+IP-CIDR,95.161.76.100/31,REJECT-NO-DROP,no-resolve
 # > 微信消息
 DOMAIN-SUFFIX,weixin.qq.com,DIRECT,extended-matching
 
