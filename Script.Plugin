@@ -1,13 +1,20 @@
 #!name = 脚本合集
 #!desc = 脚本合集
 #!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/master/App_icon/120px/JavaScriptConverter.png
-#!date = 2024-11-17
+#!date = 2025-03-08
 
 [Rule]
 # > TG不转圈
 IP-CIDR,95.161.76.100/31,REJECT-NO-DROP,no-resolve
 # > 微信消息
 DOMAIN-SUFFIX,weixin.qq.com,DIRECT,extended-matching
+DOMAIN, badjs.weixinbridge.com, REJECT,pre-matching
+DOMAIN, dns.weixin.qq.com.cn, REJECT,pre-matching
+DOMAIN-SUFFIX, wxs.qq.com, REJECT,pre-matching
+
+[Rewrite]
+# > 智行旅行
+^https?:\/\/m\.ctrip\.com\/restapi\/[\w\/]+tripAds reject
 
 [Script]
 # > 扫描全能王 pro
@@ -28,4 +35,4 @@ http-response ^https?:\/\/(nicegram\.cloud\/api\/v\d\/user\/info|restore-access\
 
 
 [Mitm]
-hostname = *.camscanner.com, *.intsig.net, m.douban.com, mb3admin.com, ios-*.prod.ftl.netflix.com, iosv2.cjapi.5fun.com, nicegram.cloud, pan.baidu.com,
+hostname = m.ctrip.com, *.camscanner.com, *.intsig.net, m.douban.com, mb3admin.com, ios-*.prod.ftl.netflix.com, iosv2.cjapi.5fun.com, nicegram.cloud, pan.baidu.com,
