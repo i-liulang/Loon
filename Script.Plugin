@@ -1,7 +1,7 @@
 #!name = 脚本合集
 #!desc = 脚本合集
 #!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/master/App_icon/120px/JavaScriptConverter.png
-#!date = 2025-03-08
+#!date = 2025-04-29
 
 [Rule]
 # > TG不转圈
@@ -15,6 +15,9 @@ DOMAIN-SUFFIX, wxs.qq.com, REJECT,pre-matching
 [Rewrite]
 # > 智行旅行
 ^https?:\/\/m\.ctrip\.com\/restapi\/[\w\/]+tripAds reject
+# > 解决github速率限制返回429问题
+^https:\/\/(raw|gist)\.githubusercontent\.com\/ header-replace Accept-Language en-us
+^https:\/\/github\.com\/ header-replace Accept-Language en-us
 
 [Script]
 # > 扫描全能王 pro
@@ -35,4 +38,4 @@ http-response ^https?:\/\/(nicegram\.cloud\/api\/v\d\/user\/info|restore-access\
 
 
 [Mitm]
-hostname = m.ctrip.com, *.camscanner.com, *.intsig.net, m.douban.com, mb3admin.com, ios-*.prod.ftl.netflix.com, iosv2.cjapi.5fun.com, nicegram.cloud, pan.baidu.com,
+hostname = raw.githubusercontent.com,gist.githubusercontent.com,github.com, m.ctrip.com, *.camscanner.com, *.intsig.net, m.douban.com, mb3admin.com, ios-*.prod.ftl.netflix.com, iosv2.cjapi.5fun.com, nicegram.cloud, pan.baidu.com,
